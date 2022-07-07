@@ -8,6 +8,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
+		mavenCentral()
         maven {
             name = 'localPluginRepository'
             url = uri( "${gradle.gradleUserHomeDir}/tmp/plugins" )
@@ -52,6 +53,7 @@ dependencyResolutionManagement {
     pluginManagement {
         repositories {
             gradlePluginPortal()
+            mavenCentral()
         }
     }
 

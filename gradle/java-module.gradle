@@ -29,6 +29,7 @@ apply plugin: 'org.hibernate.orm.database-service'
 
 apply plugin: 'java-library'
 apply plugin: 'org.hibernate.orm.database-service'
+apply plugin: 'org.graalvm.buildtools.native'
 
 apply plugin: 'checkstyle'
 apply plugin: 'build-dashboard'
@@ -536,6 +537,17 @@ project.tasks.withType( CheckForbiddenApis ) {
 	disableClassloadingCache = true
 
 	tasks.forbiddenApis.finalizedBy it
+}
+
+graalvmNative {
+  agent {
+    defaultMode = "conditional"
+    modes {
+      conditional {
+        userCodeFilterPath = "../user-code-filter.json"
+      }
+    }
+  }
 }
 
 project.tasks.check.finalizedBy tasks.forbiddenApis
