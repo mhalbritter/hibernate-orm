@@ -1,16 +1,16 @@
 {
   "rules": [
     {
-      "excludeClasses": "**"
-    },
-    {
-      "includeClasses": "org.hibernate.**"
+      "includeClasses": "**"
     },
     {
       "excludeClasses": "org.hibernate.orm.test.**"
     },
     {
       "excludeClasses": "org.hibernate.testing.**"
+    },
+    {
+      "excludeClasses": "org.apache.logging.log4j.**"
     }
   ]
 }

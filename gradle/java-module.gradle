@@ -547,6 +547,14 @@ graalvmNative {
         userCodeFilterPath = "../user-code-filter.json"
       }
     }
+
+	callerFilterFiles.from("../caller-filter.json")
+	accessFilterFiles.from("../access-filter.json")
+	metadataCopy {
+		inputTaskNames.add("test")
+		outputDirectories.add("src/main/resources/META-INF/native-image/org.hibernate/hibernate-core")
+		mergeWithExisting = true
+	}
   }
 }
 
